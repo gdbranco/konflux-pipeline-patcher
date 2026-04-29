@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 KONFLUX_CATALOG=quay.io/konflux-ci/tekton-catalog
