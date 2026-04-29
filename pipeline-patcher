@@ -467,7 +467,8 @@ bump_task_refs() {
         echo -n "${ref%@*}"
         new_ref=$(get_pinned_task_bundle_ref $ref)
         if [[ $ref != $new_ref ]]; then
-            sed -e "s!$ref!$new_ref!" -i $tekton_yaml
+            sed -e "s!$ref!$new_ref!" -i.bak $tekton_yaml
+            rm ${tekton_yaml}.bak
             echo -n " updated to ${new_ref#*@}"
         fi
         echo
